@@ -1,0 +1,20 @@
+{
+	"compilerOptions": {
+		"module": "commonjs",
+		"target": "es6",
+		"types": ["node", "jest"],
+		"esModuleInterop": true,
+		"noImplicitAny": true,
+		"moduleResolution": "node",
+		"sourceMap": false,
+		"rootDir": ".",
+		"strict": true,
+		"noEmit": false,
+		"resolveJsonModule": true,
+		"noUnusedLocals": true,
+		"outDir": "./dist",
+		"strictPropertyInitialization": false
+	},
+	"include": ["src/**/**.ts", "tests/**/**.ts"],
+	"exclude": ["node_modules"]
+}

@@ -1,0 +1,11 @@
+**/node_modules/
+**/dist/
+**/tmp
+logs/
+db-data
+test-results.xml
+**/.npm
+.env.db
+.env.db.test
+**/.env
+**/.env.develop

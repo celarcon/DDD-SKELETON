@@ -1,0 +1,8 @@
+export const SPANISH_ES = 'es'
+export const ENGLISH_EN = 'en'
+export const TITLE = 'HEADER.TITLE'
+export const LANGUAJE = 'LANGUAJE'
+export const CREATE = 'CREATE'
+export const WRITE_A_MESSAGE = 'WRITE_A_MESSAGE'
+export const NAME = 'NAME'
+export const MESSAGES = 'MESSAGES'

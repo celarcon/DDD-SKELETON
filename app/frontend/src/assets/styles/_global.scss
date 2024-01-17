@@ -1,0 +1,84 @@
+html {
+	background: map-get($colors, light-blue);
+	color: map-get($colors, blue-grey);
+	font-family: $main-font-family;
+	font-weight: 500;
+}
+
+body {
+	height: 100vh;
+	margin: 0;
+}
+.app {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-content: space-between;
+	height: 100vh;
+}
+
+.text-area {
+	box-sizing: border-box;
+	width: 100%;
+	border: none;
+	box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 4px;
+	padding: 1rem;
+	outline: none;
+	resize: none;
+}
+
+.text-area:focus {
+	box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 8px;
+}
+
+.btn-submit {
+	width: 100%;
+	background: map-get($colors, light-green);
+	border: none;
+	padding: 5px;
+	border-radius: 2px;
+	color: white;
+	font-weight: bold;
+}
+
+.btn-submit:hover {
+	background: map-get($colors, green);
+}
+
+.mb-5px {
+	margin-bottom: 5px;
+}
+
+.tranlation-button {
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	margin: 20px;
+	border: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 5px;
+	padding: 5px;
+	background: map-get($colors, grey);
+	border-radius: 2px;
+	color: white;
+}
+
+.tranlation-button:hover {
+	background: map-get($colors, blue-grey);
+}
+
+.input-text {
+	box-sizing: border-box;
+	width: 100%;
+	border: none;
+	box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 4px;
+	padding: 1rem;
+	outline: none;
+	resize: none;
+}
+
+.input-text:focus {
+	box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 8px;
+}

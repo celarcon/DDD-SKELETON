@@ -1,0 +1,40 @@
+version: "1.0"
+
+services:
+  frontend:
+    build: ./app/frontend
+    volumes:
+      - ./app/frontend:/frontend
+      - /frontend/node_modules
+      - /frontend/dist
+    ports:
+      - 3000:3000
+    container_name: frontend
+  backend:
+    env_file: ./app/backend/.env.develop
+    build: ./app/backend
+    volumes:
+      - ./app/backend:/backend
+      - /backend/node_modules
+    ports:
+      - 5000:5000
+      - 9229:9229
+    container_name: backend
+    depends_on:
+      - db
+  db:
+    image: mysql:5.7
+    container_name: db
+    env_file:
+      - .env.db
+    ports:
+      - 3306:3306
+    volumes:
+      - ./db-data:/var/lib/mysql
+  db-test:
+    image: mysql:5.7
+    container_name: db-test
+    env_file:
+      - .env.db.test
+    ports:
+      - 3307:3306

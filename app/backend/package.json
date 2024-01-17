@@ -1,0 +1,56 @@
+{
+	"name": "backend",
+	"author": "Santiago Cebrián Alarcón",
+	"version": "1.0.0",
+	"description": "backend",
+	"license": "ISC",
+	"engines": {
+		"node": ">=18.17.0",
+		"npm": ">=9.8.1"
+	},
+	"scripts": {
+		"dev:backend": "NODE_ENV=dev ts-node-dev --inspect=0.0.0.0:9229 --ignore-watch node_modules  ./src/start.ts",
+		"test:backend:e2e": "NODE_ENV=test cucumber-js -p backend",
+		"test:backend:unit": "NODE_ENV=test jest",
+		"build": "npm run build:clean && npm run build:tsc && npm run build:di",
+		"build:tsc": "tsc -p tsconfig.prod.json",
+		"build:di": "copy 'src/**/*.{json,yaml,html,png}' dist/src",
+		"build:clean": "rm -r dist; exit 0"
+	},
+	"dependencies": {
+		"@faker-js/faker": "^8.0.2",
+		"body-parser": "^1.20.2",
+		"compression": "^1.7.4",
+		"errorhandler": "^1.5.1",
+		"express": "^4.18.2",
+		"express-promise-router": "^4.1.1",
+		"express-validator": "^7.0.1",
+		"helmet": "^7.0.0",
+		"http-status": "^1.6.2",
+		"node-dependency-injection": "^2.7.1",
+		"reflect-metadata": "^0.1.13",
+		"ts-node": "^10.9.1",
+		"typescript": "^5.1.6",
+		"uuid": "^9.0.0"
+	},
+	"devDependencies": {
+		"@cucumber/cucumber": "^9.3.0",
+		"@types/body-parser": "^1.19.2",
+		"@types/compression": "^1.7.2",
+		"@types/errorhandler": "^1.5.0",
+		"@types/express": "^4.17.17",
+		"@types/glob": "^8.1.0",
+		"@types/jest": "^29.5.3",
+		"@types/mocha": "^10.0.1",
+		"@types/node": "^20.5.6",
+		"@types/supertest": "^2.0.12",
+		"@typescript-eslint/eslint-plugin": "^6.2.1",
+		"@typescript-eslint/parser": "^6.2.1",
+		"eslint": "^8.46.0",
+		"jest": "^29.6.2",
+		"prettier": "3.0.0",
+		"supertest": "^6.3.3",
+		"ts-jest": "^29.1.1",
+		"ts-node-dev": "^2.0.0"
+	}
+}

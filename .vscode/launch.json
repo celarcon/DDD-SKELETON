@@ -1,0 +1,14 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Docker API",
+      "type": "node",
+      "request": "attach",
+      "address": "localhost",
+      "port": 9229,
+      "remoteRoot": "/backend",
+      "localRoot": "${workspaceRoot}/app/backend"
+    }
+  ]
+}
