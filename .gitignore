@@ -2,7 +2,7 @@
 **/dist/
 **/tmp
 logs/
-db-data
+data
 test-results.xml
 **/.npm
 .env.db

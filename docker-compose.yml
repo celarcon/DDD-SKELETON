@@ -1,4 +1,4 @@
-version: "1.0"
+version: "2.21"
 
 services:
   frontend:
@@ -17,24 +17,36 @@ services:
       - ./app/backend:/backend
       - /backend/node_modules
     ports:
-      - 5000:5000
+      - 8080:8080
       - 9229:9229
     container_name: backend
     depends_on:
-      - db
-  db:
+      - mysql-db
+      #- mongo-db
+      #- rabbitmq
+  mysql-db:
     image: mysql:5.7
-    container_name: db
+    container_name: mysql-db
     env_file:
       - .env.db
     ports:
       - 3306:3306
     volumes:
-      - ./db-data:/var/lib/mysql
-  db-test:
-    image: mysql:5.7
-    container_name: db-test
-    env_file:
-      - .env.db.test
-    ports:
-      - 3307:3306
+      - ./data/mysql:/var/lib/mysql
+      #  mongo-db:
+      #    image: mongo:latest
+      #    container_name: mongo-db
+      #    ports:
+      #      - 27017:27017
+      #    volumes:
+      #      - ./data/mongo/dаta:/data/db
+      #    env_file:
+      #- .env.db
+#  rabbitmq:
+#    image: rabbitmq:3.12-alpine
+#    container_name: rabbitmq
+#    ports:
+#      - 5672:5672
+#    volumes:
+#      - ./rabbitmq/data/:/var/lib/rabbitmq
+#      - ./rabbitmq//local/rabbitmq.conf:/etc/rabbitmq/rabbitmq.config
