@@ -7,7 +7,6 @@ import helmet from 'helmet'
 import * as http from 'http'
 import httpStatus from 'http-status'
 import { registerRoutes } from './routes'
-import 'reflect-metadata'
 
 export class Server {
 	private readonly express: express.Express

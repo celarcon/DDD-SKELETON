@@ -1,18 +1,17 @@
 export const Context = {
-	TEST: {
-		env: 'test',
-		host: process.env.POSTGRES_DB_HOST_TEST,
-		port: Number(process.env.POSTGRES_PORT_TEST!),
-		username: process.env.POSTGRES_USER_TEST,
-		password: process.env.POSTGRES_PASSWORD_TEST,
-		database: process.env.POSTGRES_DATABASE_TEST,
-	},
 	DEV: {
 		env: 'dev',
-		host: process.env.POSTGRES_DB_HOST,
-		port: Number(process.env.POSTGRES_PORT!),
-		username: process.env.POSTGRES_USER,
-		password: process.env.POSTGRES_PASSWORD,
-		database: process.env.POSTGRES_DATABASE,
+
+		host_mysql: process.env.MYSQL_HOST,
+		port_mysql: Number(process.env.MYSQL_PORT!),
+		username_mysql: process.env.MYSQL_DATABASE,
+		password_mysql: process.env.MYSQL_PASSWORD,
+		database_mysql: process.env.MYSQL_ROOT_PASSWORD,
+
+		host_mongo: process.env.MONGO_HOST,
+		port_mongo: Number(process.env.MONGO_PORT!),
+		username_mongo: process.env.MONGO_USER,
+		password_mongo: process.env.MONGO_PASSWORD,
+		database_mongo: process.env.MONGO_ROOT_PASSWORD,
 	},
 }
